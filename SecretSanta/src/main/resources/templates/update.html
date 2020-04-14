@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="../webjars/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="../webjars/jquery/3.4.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/main.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+    <form th:action="@{/update}" th:object="${Employer}" method="post">
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="employerId" name="id" th:value="${Employer.id}">
+            <label for="nameEdit" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="nameEdit" name="name" th:value="${Employer.name}">
+
+            <label for="wishEdit" class="col-form-label">Wish:</label>
+            <input type="text" class="form-control" id="wishEdit" name="wish" th:value="${Employer.wish}">
+        </div>
+
+        <div class="form-group">
+            <label for="detailsEdit" class="col-form-label">Details:</label>
+            <input type="text" class="form-control" id="detailsEdit" name="details" th:value="${Employer.details}">
+        </div>
+
+        <div class="form-group">
+            <label for="imageEdit" class="col-form-label">Image (JPG):</label>
+            <input type="file" class="form-control" id="imageEdit" name="image">
+        </div>
+
+        <button type="submit" class="btn btn-success" name="action" value="update">Update</button>
+        <button type="submit" class="btn btn-danger" name="action" value="delete">Delete</button>
+        <button type="submit" class="btn btn-secondary" name="action" value="close">Close</button>
+    </form>
+
+</div>
+</body>
+</html>
